@@ -1,3 +1,6 @@
+#main.py
+#Main script that connects all modules for managing, sending and scheduling study reminders.
+
 from study_reminders.students import Students
 from study_reminders.students_manager import StudentsManager
 from study_reminders.logger import log_reminder
@@ -7,7 +10,7 @@ from study_reminders.scheduler import schedule_reminders
 
 def send_reminders_now(students_manager):
     """
-    Manually trigger reminders for all students - used for testing
+    Manually trigger reminders for all students (used for testing)
     """
     students = students_manager.get_students()
     if not students:
@@ -61,6 +64,9 @@ def scheduled_reminders(students_manager):
    schedule_reminders(students_manager, generate_reminder, send_reminder, log_reminder)
 
 def main():
+   """
+   Run the main script
+   """
    print("Study Reminders Automation Tool")
    students_manager = StudentsManager()
 
@@ -91,6 +97,6 @@ def main():
          menu_options[choice](students_manager)
       else:
           print("Invalid option. Please selecect a number between 1 and 6.")
-
+          
 if __name__ == "__main__":
    main()

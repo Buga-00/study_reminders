@@ -1,3 +1,5 @@
+#__init__.py
+
 from .students import Students
 from .students_manager import StudentsManager
 from .logger import log_reminder
